@@ -6,7 +6,21 @@
      font-family: "Antic",'Times New Roman', Times, serif !important;
 }
 
+.card .btn-primary{
+    width: 80%;
+    margin: auto !important;
+    display:block;
+}
 
+.card-text{
+    height: 32px;
+    margin: auto !important;
+    display:block;
+    text-align: center;
+    width: 90%;
+    color: aliceblue
+
+}
 
 .btn-primary:hover {
     background-color: rgba(255, 200, 0, 0.92) !important;
@@ -30,21 +44,22 @@ h1{
 }
 
 .card {
-    margin-top: 21px; 
-    border-radius: 1px !important;
-    box-shadow: 1px 1px 1px gold;
+    margin-top: 10% !important;
     font-family: "Antic",'Times New Roman', Times, serif !important;
+    background-color: transparent !important;
+    border: none !important;
 
     
 }
     
 img{
     opacity: 0.9;
+    border: 6px solid rgba(255, 200, 0, 0.92)  !important;
 }
 
-img:hover{
+.card img:hover{
     opacity: 1;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 200, 0, 0.23);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(235, 0, 255, 0.42);
 
 }
 
