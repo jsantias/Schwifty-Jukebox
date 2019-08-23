@@ -25,13 +25,19 @@ class Home extends Component {
   roomObjects() {
     var { rooms } = this.state;
     return rooms.map((room, index) => (
-      <Col md={4} xs={6}>
-        <Card>
-          <Card.Body>
-            <Card.Title><Image src="favicon.ico" roundedCircle /></Card.Title>
-            <Card.Title>{room.name}</Card.Title>
+
+
+      
+      <Col md={3} xs={6}>
+        <Card style={{ height: '18rem' }}>
+          <Card.Body> 
+            <Card.Title><Image src="favicon.ico" roundedCircle width="100%" height= "100%"/></Card.Title>
+                      <p>{room.name}</p>
+                      😃
+
           </Card.Body>
-          <Button variant="primary">Join</Button>
+          <Button variant="primary">Join Room</Button>
+
         </Card>
       </Col>
     ));
@@ -40,7 +46,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-
+        <Image src="favicon.ico" roundedCircle  />
         <Form>
           <h1>Create Room</h1>
           <FormControl placeholder="Create Room" />

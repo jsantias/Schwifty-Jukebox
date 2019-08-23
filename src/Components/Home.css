@@ -3,20 +3,48 @@
 .btn-primary {
      background-color: #440c5a !important;
      border-color: transparent !important;
-     font-family: "Antic",'Times New Roman', Times, serif
+     font-family: "Antic",'Times New Roman', Times, serif !important;
 }
 
+
+
+.btn-primary:hover {
+    background-color: rgba(255, 200, 0, 0.92) !important;
+    border: 1px solid rgba(255, 200, 0, 0.92)  !important;
+
+}
 
 body{
 
     background-color: #1e1e1e !important;
+    font-family: "Antic",'Times New Roman', Times, serif !important;
+    
+
+    
+
+}
+h1{
+
+    color: aliceblue !important;
+    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 200, 0, 0.72) !important;
 }
 
 .card {
-    margin-top: 21px;
+    margin-top: 21px; 
+    border-radius: 1px !important;
+    box-shadow: 1px 1px 1px gold;
+    font-family: "Antic",'Times New Roman', Times, serif !important;
+
     
 }
-.card : hover{
-    border-style: outset;
-    broder-color: #ffd340;
+    
+img{
+    opacity: 0.9;
 }
+
+img:hover{
+    opacity: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 200, 0, 0.23);
+
+}
+
