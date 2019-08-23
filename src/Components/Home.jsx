@@ -27,16 +27,13 @@ class Home extends Component {
 
 
       
-      <Col md={3} xs={6}>
-        <Card style={{ height: '18rem' }}>
+      <Col md={3} xs={6} >
+        <Card style={{ height: '21rem' }}>
           <Card.Body> 
             <Card.Title><Image src="favicon.ico" roundedCircle width="100%" height= "100%"/></Card.Title>
-                      <p>{room.name}</p>
-                      😃
-
+                      <Card.Text >{room.name}</Card.Text>
           </Card.Body>
           <Button variant="primary">Join Room</Button>
-
         </Card>
       </Col>
     ));
