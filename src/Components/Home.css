@@ -1,11 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Antic&display=swap');
 
-.btn-primary: {
-     background-color: #440c5a;
+.btn-primary {
+     background-color: #440c5a !important;
+     border-color: transparent !important;
+     font-family: "Antic",'Times New Roman', Times, serif
 }
 
 
 body{
 
-    background-color: #1e1e1e;
+    background-color: #1e1e1e !important;
+}
+
+.card {
+    margin-top: 21px;
+    
+}
+.card : hover{
+    border-style: outset;
+    broder-color: #ffd340;
 }
