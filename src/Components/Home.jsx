@@ -21,7 +21,6 @@ class Home extends Component {
   createSocket = room => {
     socket.emit("create", room);
   };
-
   roomObjects() {
     var { rooms } = this.state;
     return rooms.map((room, index) => (
