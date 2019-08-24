@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Antic&display=swap');
 
 .btn-primary {
-     background-color: #440c5a !important;
      border-color: transparent !important;
      font-family: "Antic",'Times New Roman', Times, serif !important;
 }
@@ -29,30 +28,22 @@
 }
 
 body{
-
-    background-color: #1e1e1e !important;
     font-family: "Antic",'Times New Roman', Times, serif !important;
-    
-
-    
-
 }
-h1{
 
-    color: aliceblue !important;
+h1{
     text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 200, 0, 0.72) !important;
 }
 
 .card {
     margin-top: 10% !important;
     font-family: "Antic",'Times New Roman', Times, serif !important;
-    background-color: transparent !important;
+    background-color: #1e1e1e !important;
     border: none !important;
 
-    
 }
-    
-.card img{
+
+.card-title img{
     opacity: 0.9;
     border: 6px solid rgba(255, 200, 0, 0.92)  !important;
     
