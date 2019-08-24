@@ -9,7 +9,14 @@ class Player extends React.Component {
     super(props);
     this.state = {
       endpoint: "http://localhost:7000",
-      playlist: [],
+      playlist: [
+        {
+          id: {
+            videoId: "" //no video to allow app to run
+          }
+        }
+      ],
+      playlistLength: 0
     };
 
     socket = SocketIOClient(this.state.endpoint);
@@ -19,6 +26,15 @@ class Player extends React.Component {
       this.setState({ playlist: songs });
       console.log("playlist", this.state.playlist);
     });
+  }
+
+  checkPlaylist() {
+    if (this.state.playlist.length >= 2){
+      if (this.state.playlist[0].id.videoId === ""){
+        this.state.playlist.shift();
+        console.log(this.state.playlist);
+      }
+    }
   }
 
   render() {
@@ -34,7 +50,12 @@ class Player extends React.Component {
     };
 
     return (
-      <YouTube videoId={this.state.playlist[0].id.videoId} opts={opts} onReady={this._onReady} />
+      <div>
+        <YouTube videoId={this.state.playlist[0].id.videoId} opts={opts} onReady={this._onReady} />
+        { console.log(this.state.playlist) }
+        { this.checkPlaylist() }
+      </div>
+  
     );
   }
 
