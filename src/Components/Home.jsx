@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Form, FormControl, Button, Table } from "react-bootstrap";
+import { Form, FormControl, Button, Table , Image, Card} from "react-bootstrap";
 import SocketIOClient from "socket.io-client";
-
 var socket;
+const buttonstyle = {
+    background: '#2c003f;'  
+}
 
 class Home extends Component {
   constructor() {
@@ -20,10 +22,11 @@ class Home extends Component {
   render() {
     return (
       <div>
+
         <Form>
           <h1>Create Room</h1>
           <FormControl placeholder="Create Room" />
-          <Button>Create</Button>
+          <Button style={buttonstyle}>Create</Button>
         </Form>
         <Table>
           <thead>
@@ -32,24 +35,22 @@ class Home extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Room One</td>
-              <td>
+
+            <ul><li>
+            <Card style={{padding: '1%'}}>
+  <Card.Body>
+    <Card.Title><Image src="favicon.ico" roundedCircle /></Card.Title>
+    <Card.Title> Room 1 </Card.Title>
+    
+  </Card.Body>
+  <Button variant="primary">Join</Button> <h6></h6>
+</Card></li></ul>
+<td>
                 <Button>Join Room</Button>
               </td>
-            </tr>
-            <tr>
-              <td>Room Two</td>
-              <td>
-                <Button>Join Room</Button>
-              </td>
-            </tr>
-            <tr>
-              <td>Test</td>
-              <td>
-                <Button>Join Room</Button>
-              </td>
-            </tr>
+              
+            
+            
           </tbody>
         </Table>
       </div>
