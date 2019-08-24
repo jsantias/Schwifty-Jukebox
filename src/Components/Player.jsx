@@ -4,13 +4,47 @@ import SocketIOClient from 'socket.io-client';
 
 var socket = '';
 var nextVideo = '';
+var currentPlaylist = [
+    {
+      id: {
+        videoId: "8rL4jorQlXw" 
+      },
+      snippet: {
+        title: "Jaden - Summertime In Paris",
+        channelTitle: "Jaden"
+      }
+    },
+  ];
+
+const opts = {
+  height: "390",
+  width: "640",
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 2,
+    controls: 0,
+    showinfo: 0
+  }
+};
+
+ //jaden - "8rL4jorQlXw", rick roll - "djV11Xbc914", Toto africa - "FTQbiNvZqaY"
 
 class Player extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       endpoint: "http://localhost:7000",
-      playlist: [],
+      playlist: [
+        {
+          id: {
+            videoId: "8rL4jorQlXw" 
+          },
+          snippet: {
+            title: "Jaden - Summertime In Paris",
+            channelTitle: "Jaden"
+          }
+        },
+      ],
       playlistLength: 0,
     };
 
@@ -18,10 +52,20 @@ class Player extends React.Component {
 
     socket.on("add_song", video => {
       const songs = this.state.playlist.concat(video);
+      currentPlaylist.push(video);
       // console.log(songs);
       this.setState({ playlist: songs });
       // console.log("playlist", this.state.playlist);
       // this.startBox();
+    });
+
+    socket.on("playlist", songlist => {
+      this.setState.playlist = songlist
+      // this.setState({ playlist: songlist });
+      nextVideo = songlist[0].id.videoId;
+      currentPlaylist.concat(songlist);
+      // console.log("nextvideo", nextVideo);
+      // console.log("songlist", this.state.playlist);
     });
   }
 
@@ -50,22 +94,14 @@ class Player extends React.Component {
   }
 
   render() {
-    const opts = {
-      height: "390",
-      width: "640",
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 2,
-        controls: 0,
-        showinfo: 0
-      }
-    };
+    
 
 // AEgQmPLbMvA
     return (
       <div>
-        <YouTube videoId="" opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} />
-        { console.log(this.state.playlist) }
+        {/* { console.log("the current playlist" + this.state.playlist[0].id) } */}
+        <YouTube videoId={this.state.playlist[0].id.videoId} opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} />
+        {/* { nextVideo = this.state.playlist} */}
       </div>
     );
   }
@@ -73,6 +109,10 @@ class Player extends React.Component {
   _onStateChange(event) {
     if(event.data === 0 || event.data === "") {
       event.target.loadVideoById(nextVideo);
+      nextVideo = currentPlaylist[0];
+      currentPlaylist.shift();
+      console.log("currentPlaylist", currentPlaylist);
+      console.log("nextvideo", nextVideo);
       // console.log("onstatechange = " + this.state.playlist[0]);
     }
   }
