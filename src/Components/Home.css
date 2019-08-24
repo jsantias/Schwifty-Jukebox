@@ -43,10 +43,13 @@ h1{
 
 }
 
-img{
+.card-title img{
     opacity: 0.9;
     border: 6px solid rgba(255, 200, 0, 0.92)  !important;
+    
 }
+
+
 
 .card img:hover{
     opacity: 1;

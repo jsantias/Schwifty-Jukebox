@@ -39,7 +39,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Image src="favicon.ico" roundedCircle  />
+        <Image src="favicon.ico"  roundedCircle style={{ height: '5rem' }} />
         <Form>
           <h1>Create Room</h1>
           <FormControl placeholder="Create Room" />

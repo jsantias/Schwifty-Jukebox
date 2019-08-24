@@ -1,19 +1,13 @@
 const app = require("express")();
 const http = require("http").Server(app);
-const io = require("socket.io")(http, { origins: '*:*'});
+const io = require("socket.io")(http);
 
 const port = 7000;
 
 io.on("connection", function(socket) {
   console.log("a user connected");
 
-  socket.on("create_room", room => {
-    console.log("Create Room ", room);
-    socket.join(room);
-  });
-
-  socket.on("join_room", room => {
-    console.log("Joined Room ", room);
+  socket.on("create", function(room) {
     socket.join(room);
   });
 
