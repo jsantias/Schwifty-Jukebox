@@ -18,20 +18,10 @@ class Player extends React.Component {
 
     socket.on("add_song", video => {
       const songs = this.state.playlist.concat(video);
-      // console.log(songs);
       this.setState({ playlist: songs });
-      // console.log("playlist", this.state.playlist);
-      // this.startBox();
+      console.log("playlist", this.state.playlist);
+      this.updateQueue();
     });
-  }
-
-  startBox() {
-    nextVideo = this.state.playlist[0].videoId;
-    console.log(this.state.playlist[0].videoId);
-    console.log(nextVideo);
-    this._onStateChange("");
-    // this.state.playlist.shift();
-    // this.updateQueue();
   }
 
   updateQueue() {
@@ -40,9 +30,9 @@ class Player extends React.Component {
         this.state.playlist.shift();
         // console.log(this.state.playlist);
       }
-      // console.log(this.state.playlist[0].id.videoId)
+      console.log(this.state.playlist[0].id.videoId)
       nextVideo = this.state.playlist[0].id.videoId;
-      // console.log("nextvid = " + nextVideo);
+      console.log("nextvid = " + nextVideo);
     }
     else {
       this.nextVideo = '';
@@ -62,10 +52,9 @@ class Player extends React.Component {
       }
     };
 
-// AEgQmPLbMvA
     return (
       <div>
-        <YouTube videoId="" opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} />
+        <YouTube videoId="AEgQmPLbMvA" opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} />
         { console.log(this.state.playlist) }
       </div>
   
@@ -73,7 +62,7 @@ class Player extends React.Component {
   }
 
   _onStateChange(event) {
-    if(event.data === 0 || event.data === "") {
+    if(event.data === 0) {
       event.target.loadVideoById(nextVideo);
       // console.log("onstatechange = " + this.state.playlist[0]);
     }
