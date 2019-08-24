@@ -1,0 +1,13 @@
+.no-control {
+    position: absolute;
+    height: 390px;
+    width: 640px;
+    z-index: 1;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .no-control {
+        display: none;
+    }
+}
