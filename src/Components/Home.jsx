@@ -1,16 +1,19 @@
 import React, { Component } from "react";
-import { Form, FormControl, Button, Table , Image, Card} from "react-bootstrap";
+import { Form, FormControl, Button, Col , Image, Card, Row} from "react-bootstrap";
 import SocketIOClient from "socket.io-client";
+import './Home.css'
+
 var socket;
 const buttonstyle = {
-    background: '#2c003f;'  
+    background: '#2c003f;'
 }
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      endpoint: "http://localhost:7000/"
+      endpoint: "http://localhost:7000",
+      rooms: [{id:"1243", name: "iajsfb"}, {id:"92183", name:"ijsfb"}, {id:"1243", name: "iajsfb"}, {id:"92183", name:"ijsfb"}]
     };
     socket = SocketIOClient(this.state.endpoint);
   }
@@ -18,6 +21,21 @@ class Home extends Component {
   createSocket = room => {
     socket.emit("create", room);
   };
+
+  roomObjects() {
+    var { rooms } = this.state;
+    return rooms.map((room, index) => (
+      <Col md={4} xs={6}>
+        <Card>
+          <Card.Body>
+            <Card.Title><Image src="favicon.ico" roundedCircle /></Card.Title>
+            <Card.Title>{room.name}</Card.Title>
+          </Card.Body>
+          <Button variant="primary">Join</Button>
+        </Card>
+      </Col>
+    ));
+  }
 
   render() {
     return (
@@ -28,31 +46,9 @@ class Home extends Component {
           <FormControl placeholder="Create Room" />
           <Button style={buttonstyle}>Create</Button>
         </Form>
-        <Table>
-          <thead>
-            <tr>
-              <th>Available Rooms</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            <ul><li>
-            <Card style={{padding: '1%'}}>
-  <Card.Body>
-    <Card.Title><Image src="favicon.ico" roundedCircle /></Card.Title>
-    <Card.Title> Room 1 </Card.Title>
-    
-  </Card.Body>
-  <Button variant="primary">Join</Button> <h6></h6>
-</Card></li></ul>
-<td>
-                <Button>Join Room</Button>
-              </td>
-              
-            
-            
-          </tbody>
-        </Table>
+        <Row>
+          {this.roomObjects()}
+        </Row>
       </div>
     );
   }
