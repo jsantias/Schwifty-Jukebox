@@ -24,16 +24,12 @@ class Home extends Component {
   roomObjects() {
     var { rooms } = this.state;
     return rooms.map((room, index) => (
-
-
-      
       <Col md={3} xs={6} >
         <Card style={{ height: '18rem' }}>
-          <Card.Body> 
+          <Card.Body>
             <Card.Title><Image src="favicon.ico" roundedCircle width="100%" height= "100%"/></Card.Title>
-                      <Card.Text ><h5>{room.name}</h5></Card.Text>
-                      <Button variant="primary">Join Room</Button>
-
+            <Card.Text ><h5>{room.name}</h5></Card.Text>
+            <Button variant="primary">Join Room</Button>
           </Card.Body>
         </Card>
       </Col>

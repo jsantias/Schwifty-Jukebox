@@ -47,7 +47,6 @@ class Player extends React.Component {
     else {
       this.nextVideo = '';
     }
-    
   }
 
   render() {
@@ -68,7 +67,6 @@ class Player extends React.Component {
         <YouTube videoId="" opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} />
         { console.log(this.state.playlist) }
       </div>
-  
     );
   }
 
