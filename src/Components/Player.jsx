@@ -1,5 +1,5 @@
 import React from "react";
-import YouTube from "react-youtube/src/YouTube";
+import YouTube from "react-youtube";
 import SocketIOClient from 'socket.io-client';
 
 var socket = '';
