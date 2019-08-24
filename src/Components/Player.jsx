@@ -1,22 +1,17 @@
 import React from "react";
-import YouTube from "react-youtube/src/YouTube";
+import YouTube from "react-youtube";
 import SocketIOClient from 'socket.io-client';
 
 var socket = '';
+var nextVideo = '';
 
 class Player extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       endpoint: "http://localhost:7000",
-      playlist: [
-        {
-          id: {
-            videoId: "" //no video to allow app to run
-          }
-        }
-      ],
-      playlistLength: 0
+      playlist: [],
+      playlistLength: 0,
     };
 
     socket = SocketIOClient(this.state.endpoint);
@@ -25,16 +20,24 @@ class Player extends React.Component {
       const songs = this.state.playlist.concat(video);
       this.setState({ playlist: songs });
       console.log("playlist", this.state.playlist);
+      this.updateQueue();
     });
   }
 
-  checkPlaylist() {
-    if (this.state.playlist.length >= 2){
+  updateQueue() {
+    if (this.state.playlist.length !== 0){
       if (this.state.playlist[0].id.videoId === ""){
         this.state.playlist.shift();
-        console.log(this.state.playlist);
+        // console.log(this.state.playlist);
       }
+      console.log(this.state.playlist[0].id.videoId)
+      nextVideo = this.state.playlist[0].id.videoId;
+      console.log("nextvid = " + nextVideo);
     }
+    else {
+      this.nextVideo = '';
+    }
+    
   }
 
   render() {
@@ -51,12 +54,18 @@ class Player extends React.Component {
 
     return (
       <div>
-        <YouTube videoId={this.state.playlist[0].id.videoId} opts={opts} onReady={this._onReady} />
+        <YouTube videoId="AEgQmPLbMvA" opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} />
         { console.log(this.state.playlist) }
-        { this.checkPlaylist() }
       </div>
   
     );
+  }
+
+  _onStateChange(event) {
+    if(event.data === 0) {
+      event.target.loadVideoById(nextVideo);
+      // console.log("onstatechange = " + this.state.playlist[0]);
+    }
   }
 
   _onReady(event) {
@@ -64,4 +73,5 @@ class Player extends React.Component {
     event.target.playVideo();
   }
 }
+
 export default Player;
