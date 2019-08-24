@@ -33,7 +33,7 @@ class SongQueue extends Component {
         <tbody>
           {playlist.map((song, index) => (
           <tr key={index}>
-            <td key={index}>{song.snippet.title}</td>
+            <td key={song.id.videoId}>{song.snippet.title}</td>
           </tr>
           ))}
         </tbody>

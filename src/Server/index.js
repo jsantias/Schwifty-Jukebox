@@ -12,7 +12,7 @@ io.on("connection", function(socket) {
   });
 
   socket.on("add_song", song => {
-    io.emit("add_song", song);
+    socket.broadcast.emit("add_song", song);
   });
 
   socket.on("disconnect", function() {

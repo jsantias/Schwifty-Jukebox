@@ -7,7 +7,6 @@ function Fetch(param, callback) {
   var params = {
     part: "snippet",
     q: param,
-    maxResults: 5
   };
   client.search(params, function(err, data) {
     callback(data);

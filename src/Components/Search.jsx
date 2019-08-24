@@ -10,8 +10,6 @@ class Search extends Component {
     super(props);
     this.state = {
       endpoint: "http://localhost:7000",
-      selectedVideo: null,
-      playlist: [],
     };
 
     socket = SocketIOClient(this.state.endpoint);
