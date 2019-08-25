@@ -17,7 +17,6 @@
     display:block;
     text-align: center;
     width: 90%;
-    color: aliceblue
 
 }
 
@@ -38,7 +37,6 @@ h1{
 .card {
     margin-top: 10% !important;
     font-family: "Antic",'Times New Roman', Times, serif !important;
-    background-color: #1e1e1e !important;
     border: none !important;
 
 }
@@ -50,7 +48,12 @@ h1{
 
 .card img:hover{
     opacity: 1;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(235, 0, 255, 0.42);
-
+    box-shadow: 0 4px 8px 0 #007bff, 0 6px 20px 0 #007bff;
 }
 
+.jumbotron{
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    background-color: transparent !important;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, FormControl, Button, Col , Image, Card, Row} from "react-bootstrap";
+import { Form, FormControl, Button, Col , Image, Card, Row, } from "react-bootstrap";
 import SocketIOClient from "socket.io-client";
 import uuid from 'uuid';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -65,7 +65,15 @@ class Home extends Component {
 
   render() {
     return (
+      
       <div>
+
+       
+        <Image src="favicon.ico"  roundedCircle style={{ height: '5rem' }} />
+        <Form>
+        <Image src="favicon.ico" roundedCircle  />
+        <Form onSubmit={this.createSocket.bind(this)}>
+
         <Image src="favicon.ico" roundedCircle  />
         <Form >
           <h1>Create Room</h1>
