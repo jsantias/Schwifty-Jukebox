@@ -19,6 +19,23 @@
     width: 90%;
 
 }
+.player{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
+    background-color: #fff;!important;
+}
+
+.playlist{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
+    background-color: #fff;!important;
+
+
+}
+.search{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
+    background-color: #fff;!important;
+
+
+}
 
 .btn-primary:hover {
     background-color: rgba(255, 200, 0, 0.92) !important;
@@ -28,6 +45,7 @@
 
 body{
     font-family: "Antic",'Times New Roman', Times, serif !important;
+    background-color: rgba(50, 50, 50, 0.1);
 }
 
 h1{
