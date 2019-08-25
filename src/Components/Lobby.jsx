@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 //import SocketIOClient from "socket.io-client";
+import './Home.css'
+
 
 import Player from "./Player";
 import Search from "./Search";
