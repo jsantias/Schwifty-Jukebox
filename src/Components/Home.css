@@ -28,14 +28,14 @@
 
 .playlist{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
-    background-color: #fff;!important;
+    background-color: #fff!important;
     border-radius: 4px;
 
 
 }
-.search{
+.table{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
-    background-color: #fff;!important;
+    background-color: #fff!important;
     border-radius: 4px;
 
 

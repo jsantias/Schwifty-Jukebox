@@ -24,7 +24,7 @@ class SongQueue extends Component {
   playlistRender () {
     const { playlist } = this.state;
     return (
-      <Table responsive="sm" id="playlistTable">
+      <Table responsive="sm" id="playlistTable" class="table">
         <thead>
           <tr>
             <th>Song Queue</th>
