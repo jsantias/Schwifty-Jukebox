@@ -73,7 +73,7 @@ class Home extends Component {
           <LinkContainer to="/lobby">
             <Button style={buttonstyle} type="submit">Create</Button>
           </LinkContainer>
-          </Form>
+        </Form>
         <Row>
           {this.roomObjects()}
         </Row>
