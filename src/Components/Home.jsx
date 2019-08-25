@@ -65,16 +65,8 @@ class Home extends Component {
 
   render() {
     return (
-      
       <div>
-
-       
         <Image src="favicon.ico"  roundedCircle style={{ height: '5rem' }} />
-        <Form>
-        <Image src="favicon.ico" roundedCircle  />
-        <Form onSubmit={this.createSocket.bind(this)}>
-
-        <Image src="favicon.ico" roundedCircle  />
         <Form >
           <h1>Create Room</h1>
           <FormControl value={this.state.create_room_name} onChange={this.handleChange.bind(this)} name="create_room_name" placeholder="Create Room" />
