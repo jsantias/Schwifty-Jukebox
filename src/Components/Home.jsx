@@ -67,13 +67,13 @@ class Home extends Component {
     return (
       <div>
         <Image src="favicon.ico" roundedCircle  />
-        <Form onSubmit={this.createSocket.bind(this)}>
+        <Form >
           <h1>Create Room</h1>
           <FormControl value={this.state.create_room_name} onChange={this.handleChange.bind(this)} name="create_room_name" placeholder="Create Room" />
-          <LinkContainer to="/lobby">
-            <Button style={buttonstyle} type="submit">Create</Button>
-          </LinkContainer>
         </Form>
+        <LinkContainer to="/lobby">
+          <Button style={buttonstyle} type="button" onClick={this.createSocket.bind(this)}>Create</Button>
+        </LinkContainer>
         <Row>
           {this.roomObjects()}
         </Row>
