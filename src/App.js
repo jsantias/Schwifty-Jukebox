@@ -5,7 +5,10 @@ import Lobby from "./Components/Lobby";
 import Home from "./Components/Home";
 import { Container } from "react-bootstrap";
 
+import dbConnect from "./Components/Database/connections"
+
 class App extends Component {
+
   render() {
     return (
       <Container style={{ padding: "2rem 0" }}>

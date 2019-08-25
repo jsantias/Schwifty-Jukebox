@@ -24,16 +24,18 @@ class SongQueue extends Component {
   playlistRender () {
     const { playlist } = this.state;
     return (
-      <Table responsive="sm">
+      <Table responsive="sm" id="playlistTable">
         <thead>
           <tr>
             <th>Song Queue</th>
+            <th>Channel</th>
           </tr>
         </thead>
         <tbody>
           {playlist.map((song, index) => (
-          <tr key={index}>
+          <tr key={index} id={index}>
             <td key={song.id.videoId}>{song.snippet.title}</td>
+            <td key={song.id.videoId}>{song.snippet.channelTitle}</td>
           </tr>
           ))}
         </tbody>

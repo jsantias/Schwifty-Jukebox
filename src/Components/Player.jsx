@@ -3,6 +3,7 @@ import YouTube from "react-youtube";
 import SocketIOClient from 'socket.io-client';
 
 var emitVideo = true;
+var vidCounter = 0;
 var socket = '';
 var nextVideo = '';
 var currentPlaylist = [
@@ -124,17 +125,27 @@ class Player extends React.Component {
   _onStateChange(event) {
     if(event.data === 0 || event.data === "") {
       // event.target.loadVideoById(nextVideo);
-
       // console.log("currentPlaylist", currentPlaylist);
       currentPlaylist.shift();
       // currentPlaylist.shift();
-      nextVideo = currentPlaylist[0].id.videoId;
+      if (currentPlaylist.length === 0){
+        nextVideo = "";
+      }
+      else {
+        nextVideo = currentPlaylist[0].id.videoId;
+      }
       event.target.loadVideoById(nextVideo);
+      if (vidCounter !== 0){
+        document.getElementById("playlistTable").deleteRow(1);
+      }
+      else {
+        vidCounter++;
+      }
       // console.log("new currenPlaylist shift", currentPlaylist);
       // console.log(currentPlaylist[0].snippet.title);
 
       // event.target.loadVideoById(nextVideo);
-      nextVideo = currentPlaylist[0].id.videoId;
+      // nextVideo = currentPlaylist[0].id.videoId;
       // currentPlaylist
       // console.log("currentPlaylist before", currentPlaylist[0]);
       // currentPlaylist.shift();

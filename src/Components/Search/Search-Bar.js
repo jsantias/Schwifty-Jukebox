@@ -23,7 +23,7 @@ class SearchBar extends Component {
       <div className="search-bar">
         <form onSubmit={this.handleSubmit}>
           <div className="field">
-            <label htmlFor="video-search">Video Search</label>
+            {/* <label htmlFor="video-search">Video Search</label> */}
             <input
               type="text"
               name="video-search"
