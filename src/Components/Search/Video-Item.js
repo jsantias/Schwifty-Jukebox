@@ -20,7 +20,7 @@ const VideoItem = ({ video, handleVideoSelect }) => {
             <div className="header ">{video.snippet.title}</div>
           </div>
         </Col>
-        <Col>{/* INSERT ADD SONG BUTTON HERE */}</Col>
+        {/* <Col>INSERT ADD SONG BUTTON HERE</Col> */}
       </Row>
     </div>
   );

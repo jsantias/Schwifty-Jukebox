@@ -26,21 +26,21 @@
     border-radius: 4px;
 }
 
-.playlist{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
+
+.row{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
     background-color: #fff!important;
-    border-radius: 4px;
+    border-radius: 2px!important;
+    margin: auto;
+    width: 99%;
+
 
 
 }
-.table{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
-    background-color: #fff!important;
-    border-radius: 4px;
-
-
+input{
+    width: 98%;
+    margin: auto;
 }
-
 .btn-primary:hover {
     background-color: rgba(255, 200, 0, 0.92) !important;
     border: 1px solid rgba(255, 200, 0, 0.92)  !important;

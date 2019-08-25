@@ -31,7 +31,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div class="table">
         <Searchbar handleFormSubmit={this.handleSubmit} />
         <div>
           <div>
