@@ -2,6 +2,7 @@ import React from "react";
 import YouTube from "react-youtube";
 import SocketIOClient from 'socket.io-client';
 
+var emitVideo = true;
 var socket = '';
 var nextVideo = '';
 var currentPlaylist = [
@@ -51,19 +52,30 @@ class Player extends React.Component {
     socket = SocketIOClient(this.state.endpoint);
 
     socket.on("add_song", video => {
-      const songs = this.state.playlist.concat(video);
+      // const songs = this.state.playlist.concat(video);
       currentPlaylist.push(video);
       // console.log(songs);
-      this.setState({ playlist: songs });
+      // this.setState({ playlist: songs });
       // console.log("playlist", this.state.playlist);
       // this.startBox();
     });
 
     socket.on("playlist", songlist => {
-      this.setState.playlist = songlist
-      // this.setState({ playlist: songlist });
-      nextVideo = songlist[0].id.videoId;
-      currentPlaylist.concat(songlist);
+      if (emitVideo === true){
+        this.setState.playlist = songlist
+        // this.setState({ playlist: songlist });
+        nextVideo = songlist[0].id.videoId;
+        console.log("songlist", songlist);
+        songlist.forEach(function(element){
+          // console.log(element);
+          currentPlaylist.push(element);
+
+        });
+        console.log("emitted data added to currentPlaylist", currentPlaylist)
+        emitVideo = false;
+        }
+
+      
       // console.log("nextvideo", nextVideo);
       // console.log("songlist", this.state.playlist);
     });
@@ -100,7 +112,7 @@ class Player extends React.Component {
     return (
       <div>
         {/* { console.log("the current playlist" + this.state.playlist[0].id) } */}
-        <YouTube videoId={this.state.playlist[0].id.videoId} opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} />
+        <YouTube videoId={currentPlaylist[0].id.videoId} opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} />
         {/* { nextVideo = this.state.playlist} */}
       </div>
     );
@@ -108,11 +120,23 @@ class Player extends React.Component {
 
   _onStateChange(event) {
     if(event.data === 0 || event.data === "") {
-      event.target.loadVideoById(nextVideo);
-      nextVideo = currentPlaylist[0];
+      // event.target.loadVideoById(nextVideo);
+
+      // console.log("currentPlaylist", currentPlaylist);
       currentPlaylist.shift();
-      console.log("currentPlaylist", currentPlaylist);
-      console.log("nextvideo", nextVideo);
+      // currentPlaylist.shift();
+      nextVideo = currentPlaylist[0].id.videoId;
+      event.target.loadVideoById(nextVideo);
+      // console.log("new currenPlaylist shift", currentPlaylist);
+      // console.log(currentPlaylist[0].snippet.title);
+
+      // event.target.loadVideoById(nextVideo);
+      nextVideo = currentPlaylist[0].id.videoId;
+      // currentPlaylist
+      // console.log("currentPlaylist before", currentPlaylist[0]);
+      // currentPlaylist.shift();
+      // console.log("currentPlaylist", currentPlaylist);
+      // console.log("nextvideo", nextVideo);
       // console.log("onstatechange = " + this.state.playlist[0]);
     }
   }
