@@ -21,6 +21,7 @@ class SongQueue extends Component {
     });
   }
 
+
   playlistRender () {
     const { playlist } = this.state;
     return (
@@ -29,6 +30,7 @@ class SongQueue extends Component {
           <tr>
             <th>Song Queue</th>
             <th>Channel</th>
+            <th>Duration</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +38,7 @@ class SongQueue extends Component {
           <tr key={index} id={index}>
             <td key={song.id.videoId}>{song.snippet.title}</td>
             <td key={song.id.videoId}>{song.snippet.channelTitle}</td>
+            <td key={song.id.videoId}>0:00</td>
           </tr>
           ))}
         </tbody>

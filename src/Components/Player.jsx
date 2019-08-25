@@ -16,6 +16,15 @@ var currentPlaylist = [
         channelTitle: "Jaden"
       }
     },
+    {
+      id: {
+        videoId: "dQw4w9WgXcQ" 
+      },
+      snippet: {
+        title: "Rick roll",
+        channelTitle: "Rick"
+      }
+    },
   ];
 
 const opts = {
@@ -105,10 +114,10 @@ class Player extends React.Component {
       this.nextVideo = '';
     }
   }
-
-
-
   
+
+
+
   render() {
     
 
@@ -116,8 +125,9 @@ class Player extends React.Component {
     return (
       <div>
         {/* { console.log("the current playlist" + this.state.playlist[0].id) } */}
-        <YouTube videoId={currentPlaylist[0].id.videoId} opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} />
+        <YouTube videoId={currentPlaylist[0].id.videoId} opts={opts} onReady={this._onReady} onStateChange={this._onStateChange} id="YouTubePlayer" />
         {/* { nextVideo = this.state.playlist} */}
+        {console.log(currentPlaylist)}
       </div>
     );
   }
@@ -135,7 +145,7 @@ class Player extends React.Component {
         nextVideo = currentPlaylist[0].id.videoId;
       }
       event.target.loadVideoById(nextVideo);
-      if (vidCounter !== 0){
+      if (vidCounter > 1){
         document.getElementById("playlistTable").deleteRow(1);
       }
       else {
