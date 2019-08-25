@@ -7,8 +7,14 @@ const port = 7000;
 io.on("connection", function(socket) {
   console.log("a user connected");
 
-  socket.on("create", function(room) {
-    socket.join(room);
+  socket.on("create_room", room => {
+    console.log("Create Room ", room);
+    socket.join(room.name);
+  });
+
+  socket.on("join_room", room => {
+    console.log("Joined Room ", room);
+    socket.join(room.name);
   });
 
   socket.on("add_song", song => {
