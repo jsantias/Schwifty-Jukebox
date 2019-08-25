@@ -17,22 +17,26 @@
     display:block;
     text-align: center;
     width: 90%;
+    
 
 }
 .player{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
-    background-color: #fff;!important;
+    background-color: #fff!important;
+    border-radius: 4px;
 }
 
 .playlist{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
     background-color: #fff;!important;
+    border-radius: 4px;
 
 
 }
 .search{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29)!important;
     background-color: #fff;!important;
+    border-radius: 4px;
 
 
 }
@@ -69,9 +73,3 @@ h1{
     box-shadow: 0 4px 8px 0 #007bff, 0 6px 20px 0 #007bff;
 }
 
-.jumbotron{
-    height: 100%;
-    text-align: center;
-    margin: auto;
-    background-color: transparent !important;
-}
