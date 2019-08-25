@@ -67,8 +67,7 @@ class Home extends Component {
     return (
       
       <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
        
         <Image src="favicon.ico"  roundedCircle style={{ height: '5rem' }} />
         <Form>
