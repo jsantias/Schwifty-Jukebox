@@ -68,9 +68,14 @@ class Home extends Component {
       
       <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
        
         <Image src="favicon.ico"  roundedCircle style={{ height: '5rem' }} />
         <Form>
+=======
+        <Image src="favicon.ico" roundedCircle  />
+        <Form onSubmit={this.createSocket.bind(this)}>
+>>>>>>> 8825e9de581e8cd653789b974086876741b8c907
 =======
         <Image src="favicon.ico" roundedCircle  />
         <Form onSubmit={this.createSocket.bind(this)}>
