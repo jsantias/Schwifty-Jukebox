@@ -7,7 +7,7 @@ Schwifty is an online jukebox that allows users to select their own songs.
 
 # Technical Breakdown
 
-![Architecture](https://github.com/AsianJohnBoi/Schwifty-Jukebox/blob/master/architecture.png)
+![Architecture](https://github.com/AsianJohnBoi/Schwifty-Jukebox/blob/master/images/architecture.png)
 
 # Deployment
 
