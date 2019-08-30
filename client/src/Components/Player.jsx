@@ -9,7 +9,7 @@ var nextVideo = '';
 var currentPlaylist = [
     {
       id: {
-        videoId: "8rL4jorQlXw" 
+        videoId: "8rL4jorQlXw"
       },
       snippet: {
         title: "Jaden - Summertime In Paris",
@@ -18,7 +18,7 @@ var currentPlaylist = [
     },
     {
       id: {
-        videoId: "dQw4w9WgXcQ" 
+        videoId: "dQw4w9WgXcQ"
       },
       snippet: {
         title: "Rick roll",
@@ -48,7 +48,7 @@ class Player extends React.Component {
       playlist: [
         {
           id: {
-            videoId: "8rL4jorQlXw" 
+            videoId: "8rL4jorQlXw"
           },
           snippet: {
             title: "Jaden - Summertime In Paris",
@@ -85,7 +85,7 @@ class Player extends React.Component {
         emitVideo = false;
         }
 
-      
+
       // console.log("nextvideo", nextVideo);
       // console.log("songlist", this.state.playlist);
     });
@@ -114,13 +114,10 @@ class Player extends React.Component {
       this.nextVideo = '';
     }
   }
-  
 
 
 
   render() {
-    
-
 // AEgQmPLbMvA
     return (
       <div>

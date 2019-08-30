@@ -1,8 +1,8 @@
 FROM node:latest
 
-COPY . /schwifty
+COPY . /schwiftyclient
 
-WORKDIR /schwifty
+WORKDIR /schwiftyclient
 
 RUN npm install
 
@@ -11,4 +11,4 @@ ENV NODE_ENV dev
 
 EXPOSE 3000
 
-CMD ["npm", "run", "both"]
+CMD ["npm", "start"]
